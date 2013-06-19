@@ -21,8 +21,8 @@ requires:
   Alien::OpenVcdiff: 0
   Guard: 0
   Sys::Mmap: 0
-  Vcdiff: 0
+  Vcdiff: 0.500
 resources:
   bugtracker: https://github.com/hoytech/Vcdiff-OpenVcdiff/issues
   repository: git://github.com/hoytech/Vcdiff-OpenVcdiff.git
-version: 0.100
+version: 0.102

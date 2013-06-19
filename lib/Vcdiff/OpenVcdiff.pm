@@ -9,7 +9,7 @@ use Vcdiff;
 
 use Alien::OpenVcdiff;
 
-our $VERSION = '0.100';
+our $VERSION = '0.102';
 $VERSION = eval $VERSION;
 
 require XSLoader;
@@ -162,11 +162,9 @@ Vcdiff::OpenVcdiff - open-vcdiff backend for Vcdiff
 
     my $delta = Vcdiff::OpenVcdiff::diff($source, $target);
 
-    ## ... send the $delta string to someone who has $source ...
-
     my $target2 = Vcdiff::OpenVcdiff::patch($source, $delta);
 
-    ## $target2 is the same as $target
+    ## $target2 eq $target
 
 This module is a backend to the L<Vcdiff> module and isn't usually used directly.
 
@@ -189,7 +187,7 @@ Apache licensed
 
 =item *
 
-open-vcdiff supports re-using "hashed dictionaries" (but this module doesn't expose that yet).
+open-vcdiff has a really cool feature that lets you re-use "hashed dictionaries" for multiple diff operations (but this module doesn't expose that yet).
 
 =back
 
@@ -206,12 +204,20 @@ Even with the streaming API C<open-vcdiff> has a hard upper-limit of 2G file siz
 
 If the source argument is a file handle, L<Vcdiff::OpenVcdiff> will try to C<mmap(2)> the entire file into memory with L<Sys::Mmap>. As well as adding a dependency, this means that source files must be able to fit in your address space. Because of the file size limitation described above, this shouldn't be an issue. See the "STREAMING API" section of L<Vcdiff> for more details.
 
+=item *
+
+The L<Alien::OpenVcdiff> Takes a long time to compile compared to L<Xdelta3> although it's not a completely fair comparison because the alien module also runs open-vcdiff's test-suite (which is good).
+
+=item *
+
+Not really a problem with open-vcdiff, but loading an L<Alien::Base> package for the first time seems to take a relatively long time (probably has a big dependency tree).
+
+=item *
+
+The library writes to standard error in the event of errors and I don't believe there is any way to silence these messages.
+
 =back
 
-
-=head1 TODO
-
-Implement the re-usable "hashed dictionary" API.
 
 
 
