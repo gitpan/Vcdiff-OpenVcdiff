@@ -4,7 +4,7 @@
       "unknown"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.112620",
+   "generated_by" : "ExtUtils::MakeMaker version 6.68, CPAN::Meta::Converter version 2.112621",
    "license" : [
       "perl_5"
    ],
@@ -22,11 +22,13 @@
    "prereqs" : {
       "build" : {
          "requires" : {
+            "Alien::OpenVcdiff" : 0,
             "ExtUtils::MakeMaker" : 0
          }
       },
       "configure" : {
          "requires" : {
+            "Alien::OpenVcdiff" : 0,
             "ExtUtils::MakeMaker" : 0
          }
       },
@@ -48,5 +50,5 @@
          "url" : "git://github.com/hoytech/Vcdiff-OpenVcdiff.git"
       }
    },
-   "version" : "0.102"
+   "version" : "0.105"
 }

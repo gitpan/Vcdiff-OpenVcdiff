@@ -41,13 +41,10 @@ CONS
         described above, this shouldn't be an issue. See the "STREAMING API"
         section of Vcdiff for more details.
 
-    *   The Alien::OpenVcdiff Takes a long time to compile compared to
-        Xdelta3 although it's not a completely fair comparison because the
-        alien module also runs open-vcdiff's test-suite (which is good).
-
-    *   Not really a problem with open-vcdiff, but loading an Alien::Base
-        package for the first time seems to take a relatively long time
-        (probably has a big dependency tree).
+    *   The Alien::OpenVcdiff dependency takes a long time to compile
+        compared to Vcdiff::Xdelta3 although it's not a completely fair
+        comparison because the alien module also runs open-vcdiff's
+        test-suite (which is good).
 
     *   The library writes to standard error in the event of errors and I
         don't believe there is any way to silence these messages.
