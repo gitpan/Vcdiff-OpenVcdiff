@@ -21,10 +21,11 @@ no_index:
     - inc
 requires:
   Alien::OpenVcdiff: 0
+  Carp: 0
   Guard: 0
   Sys::Mmap: 0
-  Vcdiff: 0.500
+  Vcdiff: 0.505
 resources:
   bugtracker: https://github.com/hoytech/Vcdiff-OpenVcdiff/issues
   repository: git://github.com/hoytech/Vcdiff-OpenVcdiff.git
-version: 0.105
+version: 0.106
